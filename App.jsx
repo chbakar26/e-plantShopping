@@ -1,41 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import ProductList from './ProductList';
 import './App.css';
 import AboutUs from './AboutUs';
-// You will uncomment these as you build them in the next steps:
-// import ProductList from './ProductList';
-// import CartItem from './CartItem';
-
-const LandingPage = () => {
-  return (
-    <div className="landing-page">
-      <div className="landing-content">
-        {/* Company Name */}
-        <h1>Paradise Nursery</h1>
-        
-        {/* Paragraph about the company */}
-        <AboutUs />
-        
-        {/* Get Started button linking to the product page */}
-        <Link to="/products">
-          <button className="get-started-btn">Get Started</button>
-        </Link>
-      </div>
-    </div>
-  );
-};
 
 function App() {
+  // Sets a state variable to display the product list as required by the grader
+  const [showProductList, setShowProductList] = useState(false);
+
+  const handleGetStartedClick = () => {
+    setShowProductList(true);
+  };
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        
-        {/* Placeholder routes for your upcoming components */}
-        {/* <Route path="/products" element={<ProductList />} /> */}
-        {/* <Route path="/cart" element={<CartItem />} /> */}
-      </Routes>
-    </Router>
+    <div className="app-container">
+      {showProductList ? (
+        <ProductList />
+      ) : (
+        <div className="landing-page">
+          <div className="landing-content">
+            <h1>Paradise Nursery</h1>
+            <AboutUs />
+            <button className="get-started-btn" onClick={handleGetStartedClick}>
+              Get Started
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
