@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.landing-page {
+  /* Implements the required background image */
+  background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e736?auto=format&fit=crop&w=1920&q=80'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.landing-content {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 50px;
+  border-radius: 10px;
+  color: white;
+  max-width: 900px;
+}
+
+.landing-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #a3e635;
+}
+
+.get-started-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.get-started-btn:hover {
+  background-color: #45a049;
+}
